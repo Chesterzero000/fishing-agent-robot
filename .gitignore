@@ -31,3 +31,7 @@ logs/
 tmp/
 temp/
 *.tmp
+
+# MCP Config (local files with actual API keys)
+mcp-config/*.local.json
+mcp-config/mcp_config.local.json

@@ -1,27 +1,36 @@
 # MCP 配置文件说明
 
-## 文件位置
+## 文件说明
 
-- **配置文件**: `mcp-config/mcp_config.json`
+- **mcp_config.json** - 模板配置文件（无敏感信息，可提交到 Git）
+- **mcp_config.local.json** - 本地配置文件（包含你的实际 API Key，不会提交）
 - **Claude Code 配置目录**: `~/.config/claude-code/` (Linux/Mac) 或 `%APPDATA%\claude-code\` (Windows)
 
 ## 安装步骤
 
-### Windows 系统
+### 方式一：使用本地配置文件（推荐）
 
-1. **打开 Claude Code 配置目录**
+**直接使用 `mcp_config.local.json`**，它已经包含了你的实际 API Key：
+
+```powershell
+# 复制本地配置文件到 Claude Code
+Copy-Item mcp-config\mcp_config.local.json $env:APPDATA\claude-code\mcp_config.json
+```
+
+### 方式二：手动复制模板
+
+1. **复制模板文件**
    ```powershell
-   # 在 PowerShell 中运行
-   notepad $env:APPDATA\claude-code\mcp_config.json
+   Copy-Item mcp-config\mcp_config.json $env:APPDATA\claude-code\mcp_config.json
    ```
 
-2. **复制配置内容**
-   - 打开本项目中的 `mcp-config/mcp_config.json`
-   - 复制全部内容到 Claude Code 的配置文件中
+2. **编辑配置文件，替换占位符**
+   ```powershell
+   notepad $env:APPDATA\claude-code\mcp_config.json
+   ```
+   - 将 `YOUR_GITHUB_TOKEN_HERE` 替换为你的实际 GitHub Token
 
 3. **重启 Claude Code**
-   - 关闭并重新打开 Claude Code
-   - MCP 服务器会自动启动
 
 ### 验证安装
 
@@ -64,12 +73,14 @@
 |------|-----|
 | TOKEN | 需要替换为你的实际 Token |
 
-### Brave Search MCP
+### Brave Search MCP（暂未配置）
 网络搜索功能（需要 Brave Search API Key）
 
 | 参数 | 值 |
 |------|-----|
 | API KEY | 需要从 https://brave.com/search/api/ 获取 |
+
+**注**：此服务暂时跳过，后续需要时可添加。
 
 ## 快速安装脚本
 
