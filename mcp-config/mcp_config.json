@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "mysql": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-mysql"
+      ],
+      "env": {
+        "MYSQL_HOST": "192.168.1.79",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "fishing",
+        "MYSQL_PASSWORD": "liu.ccit-1244",
+        "MYSQL_DATABASE": "fishing"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "Z:\\008.钓鱼教练Agent\\知识图谱\\Sustech钓鱼协会"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN_HERE"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY_HERE"
+      }
+    }
+  }
+}
